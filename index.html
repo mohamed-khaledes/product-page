@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <title>E-commerce product page</title>
+  <!--link of google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kumbh+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<!--link of css styel-->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--start header-->
+<header>
+  <div class="container">
+    <div class="logo">
+      <img class="menu" src="images/icon-menu.svg" alt="">
+      <img src="images/logo.svg" alt="">
+    </div>
+    <nav>
+      <ul>
+        <li>Collections</li>
+        <li>Men</li>
+        <li class="active-ele">Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="cart-icon">
+        <img  src="images/icon-cart.svg" alt="">
+        <span class="numofYCart">0</span>
+      </div>
+      <img class="profile" src="images/image-avatar.png" alt="">
+      <!--cart-->
+<div class="cart">
+  <h4>Cart</h4>
+  <div class="parent">
+    <div class="proInCart">
+      <img class="imgInCart" src="images/image-product-1.jpg" alt="">
+      <div class="text">
+        <p>Fall Limited Edition Sneakers</p>
+        <p>$125.00 x <span class="countOfPro">3</span> <span class="total">$375.00</span></p>
+      </div>
+      <img class="delete" src="images/icon-delete.svg" alt="">
+    </div>
+    <button class="check-out">CheckOut</button>
+  </div>
+</div>
+<!--End cart-->
+    </div>
+  </div>
+</header>
+<!--End header-->
+<!--start product-->
+<section class="product">
+  <div class="container">
+    <div class="img-content">
+      <div class="product-img">
+        <img  src="images/image-product-1.jpg" alt="">
+      </div>
+      <div class="gallary">
+<div class="img active">
+  <img src="images/image-product-1.jpg" alt="">
+</div>       
+<div class="img">
+  <img src="images/image-product-2.jpg" alt="">
+</div>
+<div class="img">
+  <img src="images/image-product-3.jpg" alt="">
+</div>
+<div class="img">
+  <img src="images/image-product-4.jpg" alt="">
+</div>
+      </div>
+    </div>
+    <div class="content">
+      <p class="firstp">Sneaker Company</p>
+      <h1>Fall Limited Edition Sneakers</h1>
+      <p class="secondp">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="price">
+          <p>$125.00<span>50%</span></p>
+          <p>$250.00</p>
+        </div>
+        <div class="cart">
+          <div class="count">
+            <span class="minus"><img src="images/icon-minus.svg" alt=""></span>
+            <span class="number">0</span>
+            <span class="plus"><img src="images/icon-plus.svg" alt=""></span>
+          </div>
+          <button class="add-btn"><img src="images/icon-cart.svg" alt=""> Add to cart</button>
+        </div>
+    </div>
+  </div>
+</section>
+<!--overlay-->
+<div class="overlay">
+  <div class="container">
+    <div class="img-content">
+      <img class="close" src="images/icon-close.svg" alt="">
+      <div class="product-img-overlay">
+        <img  src="images/image-product-1.jpg" alt="">
+      </div>
+      <div class="gallary">
+<div class="img active">
+  <img src="images/image-product-1.jpg" alt="">
+</div>       
+<div class="img">
+  <img src="images/image-product-2.jpg" alt="">
+</div>
+<div class="img">
+  <img src="images/image-product-3.jpg" alt="">
+</div>
+<div class="img">
+  <img src="images/image-product-4.jpg" alt="">
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--overlay-->
+  <script src="js/script.js"></script>
+</body>
+</html>
