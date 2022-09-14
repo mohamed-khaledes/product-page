@@ -6,3 +6,5 @@
 - Switching the large product image by clicking on the small thumbnail images
 - Adding items to the cart
 - Viewing the cart and remove items from it
+
+- Open site https://mohamed-khaled11.github.io/product-page/
