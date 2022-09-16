@@ -53,7 +53,9 @@ header {
         align-items: center;
         .menu {
           margin-right: 10px;
-          display: block;
+    display: block;
+    margin-left: 15px;
+    width: 20px;
         }
       }
     }
@@ -80,6 +82,27 @@ header {
           padding: 30px 30px 0 10px;
           margin-top: 75px;
         }
+        a{
+          text-decoration: none;
+          color: $Dark-grayish-blue;
+          transition: all 0.3s;
+          &.active-ele{
+            color: $Black;
+            &::after{
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 3px;
+              background-color: $Orange;
+              bottom: -33px;
+              left: 0;
+              transition: all 0.3s;
+              @include media(mobile) {
+                bottom: -8px;
+              }
+            }
+          }
+        }
         li {
           margin-right: 20px;
           font-size: 16px;
@@ -103,7 +126,7 @@ header {
               left: 0;
               transition: all 0.3s;
               @include media(mobile) {
-                bottom: -8px;
+                bottom: -10px;
               }
             }
           }
@@ -116,9 +139,14 @@ header {
             bottom: -33px;
             left: 0;
             transition: all 0.3s;
+            @include media(mobile) {
+              bottom: -10px;
+            }
           }
-          &:hover {
-            color: $Black;
+          &:hover{
+            a{
+              color: $Black;
+            }
           }
           &:hover::after {
             width: 100%;
@@ -138,6 +166,9 @@ header {
       }
       .cart-icon {
         position: relative;
+        &:active{
+          top:5px;
+        }
         span {
           position: absolute;
           top: -14px;
@@ -171,6 +202,7 @@ header {
         animation: cartani 0.3s linear forwards;
         z-index: 1000;
         display: none;
+        min-height: 200px;
         &.display {
           display: block;
         }
@@ -250,6 +282,8 @@ header {
 // End header
 // start section product
 section {
+  animation: sectionAnimation 0.6s linear  forwards;
+  position: relative;
   .container {
     display: flex;
     justify-content: space-between;
@@ -308,9 +342,9 @@ section {
         }
         .active {
           img {
-            opacity: 0.6;
+            opacity: 0.5;
           }
-          border: 2px solid $Orange;
+          // border: 2px solid $Orange;
         }
         img {
           width: 100%;
@@ -443,6 +477,14 @@ section {
     }
   }
 }
+@keyframes sectionAnimation {
+  0%{
+    top:50px;
+  }
+  100%{
+    top: 0;
+  }
+}
 // End section product
 // overlay
 .overlay {
@@ -450,7 +492,7 @@ section {
   text-align: center;
   display: none;
   transition: all 0.5s;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background: #000000db;
@@ -468,6 +510,9 @@ section {
     right: -250px;
     padding: 5px;
     cursor: pointer;
+    @include media(mobile){
+      right: -150px;
+    }
   }
   .product-img {
     img {
@@ -486,6 +531,9 @@ section {
     width: 500px;
     border-radius: 10px;
     transition: all 0.3s;
+    @include media(mobile){
+      width: 100%;
+    }
   }
   .gallary {
     display: flex;
@@ -499,6 +547,11 @@ section {
       margin-right: 20px;
       cursor: pointer;
       position: relative;
+      @include media(mobile){
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+      }
       img {
         transition: all 0.5s;
         &:hover {
@@ -513,8 +566,161 @@ section {
       }
     }
     img {
-      width: 100px;
+      width: 100%;
+      height: 100%;
     }
   }
 }
 // overlay
+// aticle about us
+.section-about{
+  animation: sectionAnimation 0.6s linear  forwards;
+  position: relative;
+  .container{
+    text-align: center;
+    padding: 100px 0 0;
+    flex-direction: column;
+    @include media(mobile){
+      padding: 0;
+    }
+    h1{
+      font-size: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    p{
+      font-size: 25px;
+      line-height: 1.8;
+      color: $Grayis-blue;
+    }
+  }
+}
+// aticle about us
+// collection section
+.collection-section{
+  .container{
+    text-align: center;
+    flex-direction: column;
+    padding: 0;
+    h1{
+      font-size: 50px;
+      text-transform: uppercase;
+      @include media(mobile){
+        margin: 10px;
+      }
+    }
+    .content{
+      background: white;
+    padding: 50px;
+    display: flex;
+    justify-content:space-evenly;
+    gap: 50px;
+    max-height: 590px;
+    overflow: hidden;
+    transition: all 0.3s;
+    @include media(mobile){
+      flex-direction: column;
+    }
+      img{
+        width: 510px;
+        @include media(mobile){
+          width: 100%;
+        }
+      }
+      .women,.men{
+        cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        &::after{
+          content: "";
+            position: absolute;
+            width:0;
+            height:100%;
+            top: 0;
+            left: 0;
+            background-color: #ffffff8f;
+            transition: all 0.3s;
+        }
+        &:hover{
+          &::after{
+            content: "";
+              position: absolute;
+              width:100%;
+              height:100%;
+              top: 0;
+              left: 0;
+              background-color: #ffffff8f;
+              transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+// collection section
+.contact {
+  display: flex;
+  // padding-top: 3.5rem;
+  .container{
+    flex-direction: column;
+    padding: 0;
+    h1{
+      text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    }
+    .right-contact {
+      flex: 3;
+      // margin-left: 3rem;
+      .input-control {
+          margin: 1.5rem 0;
+          input, textarea {
+              border-radius: 30px;
+              font-weight: inherit;
+              font-size: inherit;
+              font-family: inherit;
+              padding:20px;
+              outline: none;
+              border: none;
+              background-color:$Pal-orange;
+              width: calc(100% - 40px);
+              resize: none;
+              &:focus{
+                &::placeholder{
+                  opacity: 0;
+                  transition: all 0.3s;
+                }
+              }
+          }
+      }
+      .i-c-2 {
+          display: flex;
+          :last-child{
+              margin-left: 1.5rem;
+          }
+      }
+      .submit-btn {
+          display: flex;
+          justify-content: flex-start;
+          input{
+            width: 100%;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    background: $Orange;
+    border: navajowhite;
+    border-radius: 30px;
+    transition: all 0.3s;
+    position: relative;
+    &:active{
+      top: 3px;
+    }
+    cursor: pointer;
+          }
+      }
+  }
+  }
+}

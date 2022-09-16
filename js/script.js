@@ -1,5 +1,5 @@
 // active element in header
-let elementsHeader = document.querySelectorAll("li");
+let elementsHeader = document.querySelectorAll("li a");
 function eleHeader(){
     elementsHeader.forEach((ele)=>{
         ele.addEventListener("click",function(e){
@@ -102,9 +102,10 @@ AddToCart();
 // add the number of product to your cart
 //Start display your cart
 let profile = document.querySelector('.profile');
+let cartIcon = document.querySelector(".cart-icon");
 let cart = document.querySelector(".cart");
 function displayCart(){
-    profile.addEventListener("click",function(){
+    cartIcon.addEventListener("click",function(){
         cart.classList.toggle("display");
         if(numofYCart.textContent == 0){
             parentOfCart.style.display ="none";
@@ -117,7 +118,7 @@ function displayCart(){
             document.querySelectorAll('.empty').forEach((el)=>{
                 el.style.display = "none";
             })
-            }, 5000);
+            },5000);
         }else{
             parentOfCart.style.display ="block";
             document.querySelector(".empty").remove();
