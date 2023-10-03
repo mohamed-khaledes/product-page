@@ -7,4 +7,4 @@
 - Adding items to the cart
 - Viewing the cart and remove items from it
 
-- Open site https://mohamed-khaled11.github.io/product-page/
+- Open site https://mohamed-khaledes.github.io/product-page/
